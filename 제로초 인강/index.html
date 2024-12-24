@@ -21,12 +21,21 @@
         #header{
             height: 50px;
             background-color: aqua;
+
+            text-align: left;
         }
         #header-hamburger{
+            display: inline-block;
             margin-top : 18px;
-            background-color: blue;
-            width: 46px;
-            height: 46px;
+            padding: 8px;
+        }
+        #header-hamburger >div{
+            background-size: 452px 436px;
+            background-position: -311px -166px;
+            background-repeat: no-repeat;
+            background-image: url(./sp_main.png);
+            width: 32px;
+            height: 32px;
         }
         #search{
             height: 50px;
@@ -39,7 +48,9 @@
     <div id = "wrap">
         <div id = "wrap-center">    
             <div id = "header">
-                <div id ="header-hamburger"></div>
+                <div id ="header-hamburger">
+                    <div></div>
+                </div>
             </div>
             <div id ="search"></div>
             <div id = "nav"></div>
