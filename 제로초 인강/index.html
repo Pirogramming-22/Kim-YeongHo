@@ -82,10 +82,15 @@
             background-color: transparent;
             border: none;
             cursor: pointer;
+            position : relative;
         }
         #header-hamburger:hover{
             background-color: var(--color_option_bg);
             border-radius: 50%;
+        }
+        #header-hamburger:hover::before{
+            content: '';
+            /*수정된 네이버에서 줄어드는 영역 없음*/
         }
         #header-hamburger >div{
             background-size: 452px 436px;
