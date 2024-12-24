@@ -67,33 +67,35 @@
         #wrap-center{
             display: inline-block;
             width: 1280px;
-            background-color: yellow;
+            background-color: white;
         }
         #header{
             height: 50px;
-            background-color: aqua;
+            background-color: white;
 
             text-align: left;
+            position: relative;
         }
-        #header-hamburger{
+        #header-hamburger , #header-naverpay , #header-navertalk , #header-notifications , #header-shoppingcart{
             display: inline-block;
-            margin-top : 18px;
+            top: 5px;
             padding: 8px;
             background-color: transparent;
             border: none;
             cursor: pointer;
-            position : relative;
+            position : absolute;
         }
-        #header-hamburger:hover{
+
+        #header-hamburger:hover,#header-naverpay:hover, #header-navertalk:hover, #header-notifications:hover,#header-shoppingcart:hover{
             background-color: var(--color_option_bg);
             border-radius: 50%;
         }
-        #header-hamburger:hover::before{
+        #header-hamburger:hover::before,#header-naverpay:hover::before,#header-navertalk:hover::before,#header-notifications:hover::before,#header-shoppingcart:hover::before{
             content: '';
             z-index: 1;
             /*수정된 네이버에서 줄어드는 영역 없음*/
         }
-        #header-hamburger >div{
+        #header-hamburger >div, #header-shoppingcart >div,#header-naverpay >div,#header-navertalk >div,#header-notifications >div{
             position: relative;
             z-index:0;
             background-size: 452px 436px;
@@ -103,9 +105,18 @@
             width: 32px;
             height: 32px;
         }
+        #header-shoppingcart >div{background-position: -33px -316px;}
+        #header-naverpay >div{background-position: -248px -260px;}
+        #header-navertalk >div{background-position: -99px -316px;}
+        #header-notifications >div{background-position: -311px -232px;}
+        #header-hamburger{left: -21px;}
+        #header-naverpay{left: 31.5px;}
+        #header-navertalk{left: 1128px;}
+        #header-notifications{left: 1181px;}
+        #header-shoppingcart{left: 1232px;}
         #search{
             height: 50px;
-            background-color: blue;
+            background-color: white;
         }
         .blind{
             position: absolute;
@@ -125,6 +136,30 @@
                     <!--::before-->
                     <div></div>
                     <span class="blind">확장 영역</span>
+                    <!--::after-->
+                </button>
+                <button id ="header-naverpay">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                    <!--::after-->
+                </button>
+                <button id ="header-navertalk">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">네이버 톡</span>
+                    <!--::after-->
+                </button>
+                <button id ="header-notifications">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">알림 및 혜택</span>
+                    <!--::after-->
+                </button>
+                <button id ="header-shoppingcart">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">장바구니</span>
                     <!--::after-->
                 </button>
             </div>
