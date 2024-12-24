@@ -90,9 +90,12 @@
         }
         #header-hamburger:hover::before{
             content: '';
+            z-index: 1;
             /*수정된 네이버에서 줄어드는 영역 없음*/
         }
         #header-hamburger >div{
+            position: relative;
+            z-index:0;
             background-size: 452px 436px;
             background-position: -311px -166px;
             background-repeat: no-repeat;
@@ -104,7 +107,14 @@
             height: 50px;
             background-color: blue;
         }
-
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +122,10 @@
         <div id = "wrap-center">    
             <div id = "header">
                 <button id ="header-hamburger">
+                    <!--::before-->
                     <div></div>
+                    <span class="blind">확장 영역</span>
+                    <!--::after-->
                 </button>
             </div>
             <div id ="search"></div>
