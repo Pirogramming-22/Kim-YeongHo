@@ -202,12 +202,17 @@
             border: none;
             outline: none;
         }
+        #search-input::placeholder{
+            color: white;
+        }
+        #search-input:focus::placeholder{
+            color:#e4e4e4
+        }
         #search-right{
             display: flex;
             flex:1;
             align-items: stretch;
             justify-content: flex-end;
-            padding-right: 10px;
         }
         #search-keyboard , #search-recent , #search-button{
             background-color: transparent;
@@ -233,6 +238,12 @@
             background-repeat: no-repeat;
             width: 10px;
             height: 6px;
+        }
+        #search-keyboard:hover::before{
+            filter: brightness(0.7);
+        }
+        #search-button{
+            padding : 17px 27px 16px 10px;
         }
         #search-button::before{
             fill:#03c75a
