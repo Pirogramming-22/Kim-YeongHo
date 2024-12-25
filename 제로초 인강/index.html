@@ -181,6 +181,7 @@
             height: 24px;
         }
         #search-svg{
+            position: relative;
             display: inline-flex;
             justify-content: center;
             align-content: center;
@@ -188,6 +189,19 @@
             margin-right: 12px;
             height: 100%;
             padding-left: 10px;
+        }
+         #search-svg::after{
+            display:none
+        }
+        #search>form:focus-within #search-svg::after{
+            position: absolute;
+            right: 0;
+            top: 18px;
+            width: 1px;
+            height: 20px;
+            content: '';
+            background-color: #e4e4e4;
+            display: inline-block;
         }
         #search-svg svg{
             width: 24px;
