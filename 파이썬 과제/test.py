@@ -1,4 +1,7 @@
-x = int(input())
+bus_pay = 1350
+balance = int(input())
 
-for i in range(1,10):
-    print(x ,' * ', i , ' = ' , x*i,sep='')
+while(balance > 0):
+    balance -= bus_pay
+    if(balance >= 0):
+        print(balance)
