@@ -116,6 +116,7 @@ article .team-section{
 }
 .project-content >p{
     font-size: 1.6rem;
+    text-align: left;
 }
 .project-content >ul{
     display: flex;
@@ -125,6 +126,7 @@ article .team-section{
 .project-content > span {
     font-size: 2.2rem;
     font-weight: 900;
+    text-align: left;
 }
 .project-pic{
     display: flex;
