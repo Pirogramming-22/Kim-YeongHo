@@ -21,6 +21,7 @@
     background-color: black;
 }
 header{
+    z-index:999;
     display: flex;
     flex-wrap: wrap;
     position: fixed;
@@ -47,14 +48,55 @@ header{
     padding: 10px;
     margin-left: 30px;
 }
-#header-button-container{
-    height: 100%;
-    width: 600px;
-    background-color:var(--black_main);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media(min-width:650px){
+    #header-button-container{
+        height: 100%;
+        width: 600px;
+        background-color:var(--black_main);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hd-container-hamburger{
+        display: none;
+    }
 }
+
+@media(max-width:650px){
+    #header-button-container{
+        display: none;
+    }
+    .hamburger-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+    .hd-container-hamburger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        background-color: black;
+    }
+    .hd-container-hamburger div{
+        width: 100%;
+        height: 3px;
+        background-color: white;
+    }
+    .hd-container-hamburger div:nth-child(1){
+        width: 50%;
+    }
+    .hd-container-hamburger div:nth-child(3){
+        width: 80%;
+    }
+
+
+}
+
 #header-button-container > a{
     width: 12%;
     height: 100%;
@@ -72,6 +114,7 @@ article{
     padding: 90px 40px 50px;
     background-color: black;
 }
+/* 바제네레이션 */
 article #bar-generation{
     display: flex;
     justify-content: center;
@@ -85,6 +128,7 @@ article #bar-generation > span{
     font-size: 25px;
 
 }
+/* 팀섹션 기본+플젝컨테이너 */
 article .team-section{
     width: 100%;
     background-color: #333;
@@ -92,139 +136,323 @@ article .team-section{
     border-radius: 6px;
     margin-bottom: 16px;
 }
-.project-container{
-    display: flex;
-    width: 100%;
-    padding: 16px;
-    flex-direction: row;
-    color: white;
+@media(min-width:650px){
+    .project-container{
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding: 16px;
+        flex-direction: row;
+        color: white;
+    }
 }
-.project-content{
+@media(max-width:650px){
+    .project-container{
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding: 16px;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+}
+/* 프로젝트 컨테이너 햄버거 */
+.project-container .pj-container-hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding:10px;
-}
-.project-content > ul >li{
-    background-color:rgba(236, 236, 236, 0.466);
-    font-size: 1.2rem;
-    padding: 5px;
-    border-radius: 3px;
-}
-.project-content > ul :nth-child(1){
-    background-color: #2188b6;
-}
-.project-content >p{
-    font-size: 1.6rem;
-    text-align: left;
-}
-.project-content >ul{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-.project-content > span {
-    font-size: 2.2rem;
-    font-weight: 900;
-    text-align: left;
-}
-.project-pic{
-    display: flex;
-    width: 150px;
-    height: 110px;
-    border-radius: 6px;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-.project-pic img{
-    width: 100%;
-    padding: 1rem 1rem;
-    object-fit: contain;
-}
-footer{
-    width: 100%;
-    padding: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 20px;
     background-color: #333;
 }
-#footer-icons >ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap:10px
+.project-container .pj-container-hamburger div{
+    width: 100%;
+    height: 3px;
+    background-color: rgba(236, 236, 236, 0.466);
 }
 
-#footer-icons ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50px;
-}
-#footer-icons ul li img{
-    width: 18px;
-    height: 18px;
-}
-#footer-wrap{
-    display: flex;
-    flex-direction: row;
-    width: min(1200px , 100%);
-    background-color: #333;
-    padding: 0 40px;
-    gap:10px;
-}
-#footer-contact{
-    display: flex;
-    flex-direction: column;
-    padding:0 100px 0 0 ;
-    gap:10px
-}
-#footer-contact > a{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    color: white;
+/* 팀섹션 호버 애니메이션 */
+.team-section:hover .project-pic img{
+    scale:1.1;
+    transition: scale 0.3s ease;
 }
 
-#footer-contact > #contact-email{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.team-section:hover .pj-container-hamburger :nth-child(1) {
+    margin-right: auto;
+    width: 50%; /* 가로 너비를 줄임 */
+    height: 2px;
+    transition: height 0.4s ease; /* 부드럽게 변화 */
+    transition: width 0.4s ease; /* 부드럽게 변화 */
+
 }
-#footer-contact > #contact-email > span{
-    font-size:12px ;
-    color: white;
+.team-section:hover .pj-container-hamburger :nth-child(3) {
+    margin-left: auto;
+    width: 50%; /* 가로 너비를 줄임 */
+    height: 2px;
+    transition: width 0.5s ease; /* 부드럽게 변화 */
 }
-#footer-contact > #contact-email div{
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+.team-section:hover{
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
 }
-#footer--nav{
-    display: flex;
-    justify-content: center;
-    flex:1;
+/* ------------------------------------- */
+/* 프로젝트 컨텐츠 */
+@media(min-width:650px){
+    .project-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:10px;
+    }
+    .project-content > ul >li{
+        background-color:rgba(236, 236, 236, 0.466);
+        font-size: 1.2rem;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    .project-content > ul :nth-child(1){
+        background-color: #2188b6;
+    }
+    .project-content >p{
+        font-size: 1.6rem;
+        text-align: left;
+    }
+    .project-content >ul{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .project-content > span {
+        font-size: 2.2rem;
+        font-weight: 900;
+        text-align: left;
+    }
+    .project-pic{
+        display: flex;
+        width: 150px;
+        height: 110px;
+        border-radius: 6px;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .project-pic img{
+        width: 100%;
+        padding: 1rem 1rem;
+        object-fit: contain;
+    }
 }
-#footer--nav >ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+@media(max-width:650px){
+    .project-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:10px;
+        gap: 10px;
+    }
+    .project-content > ul >li{
+        background-color:rgba(236, 236, 236, 0.466);
+        font-size: 1.2rem;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    .project-content > ul :nth-child(1){
+        background-color: #2188b6;
+    }
+    .project-content >p{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .project-content >ul{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .project-content > span {
+        font-size: 2.2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+    .project-pic{
+        display: flex;
+        width: 150px;
+        height: 110px;
+        border-radius: 6px;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .project-pic img{
+        width: 100%;
+        padding: 1rem 1rem;
+        object-fit: contain;
+    }
 }
-#footer--nav >ul li{
-    color: white;
-    font-size: 15px;
+/* 푸터 */
+
+@media(min-width:650px){
+    footer{
+        width: 100%;
+        padding: 40px;
+        background-color: #333;
+    }
+    #footer-icons >ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:10px
+    }
+
+    #footer-icons ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50px;
+    }
+    #footer-icons ul li img{
+        width: 18px;
+        height: 18px;
+    }
+    #footer-wrap{
+        display: flex;
+        flex-direction: row;
+        width: min(1200px , 100%);
+        background-color: #333;
+        padding: 0 40px;
+        gap:10px;
+    }
+    #footer-contact{
+        display: flex;
+        flex-direction: column;
+        padding:0 100px 0 0 ;
+        gap:10px
+    }
+    #footer-contact > a{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        color: white;
+    }
+
+    #footer-contact > #contact-email{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    #footer-contact > #contact-email > span{
+        font-size:12px ;
+        color: white;
+    }
+    #footer-contact > #contact-email div{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    #footer--nav{
+        display: flex;
+        justify-content: center;
+        flex:1;
+    }
+    #footer--nav >ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    #footer--nav >ul li{
+        color: white;
+        font-size: 15px;
+    }
+    #footer--nav >ul li> span:nth-child(2){
+        color: #949494;
+        font-size: 15px;
+    }
 }
-#footer--nav >ul li> span:nth-child(2){
-    color: #949494;
-    font-size: 15px;
+
+@media(max-width:650px){
+    footer{
+        width: 100%;
+        padding: 40px;
+        background-color: #333;
+    }
+    #footer-icons >ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:10px
+    }
+
+    #footer-icons ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50px;
+    }
+    #footer-icons ul li img{
+        width: 18px;
+        height: 18px;
+    }
+    #footer-wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: min(1200px , 100%);
+        background-color: #333;
+        gap:10px;
+    }
+    #footer-contact{
+        display: flex;
+        flex-direction: column;
+        gap:10px
+    }
+    #footer-contact > a{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        color: white;
+    }
+
+    #footer-contact > #contact-email{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    #footer-contact > #contact-email > span{
+        font-size:12px ;
+        color: white;
+    }
+    #footer-contact > #contact-email div{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    #footer--nav{
+        display: none;
+
+    }
+
 }
