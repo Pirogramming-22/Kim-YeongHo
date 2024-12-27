@@ -1,2 +1,7 @@
-x = int(input());
-print(tuple(range(-10,10,x)));
+str1 = input();
+str2 = input();
+
+str1 = str1[1::2];
+str1 +=str2[::2];
+
+print(str1)
