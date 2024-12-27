@@ -34,6 +34,7 @@ header{
 }
 
 #header-container{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,8 +49,10 @@ header{
     padding: 10px;
     margin-left: 30px;
 }
-@media(min-width:650px){
+@media(min-width:880px){
     #header-button-container{
+        position: absolute;
+        right: 100px;
         height: 100%;
         width: 600px;
         background-color:var(--black_main);
@@ -62,7 +65,7 @@ header{
     }
 }
 
-@media(max-width:650px){
+@media(max-width:880px){
     #header-button-container{
         display: none;
     }

@@ -1,0 +1,403 @@
+/* 기본 설정 */
+:root{
+    --black_main: rgba(0,0,0);
+
+}
+.text-white{
+    color:white;
+}
+#wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+#main{
+    text-align: center;
+    width: 100%;
+    height: 2000px;
+    background-color: black;
+}
+/* ---------------------------------- */
+/* 헤더 */
+header{
+    z-index:999;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    background-color: var(--black_main);
+    width: 100%;
+    height: 90px;
+    opacity: 80%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+}
+#header-svg{
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    padding: 10px;
+    margin-left: 30px;
+}
+@media(min-width:880px){
+    #header-button-container{
+        position: absolute;
+        right: 100px;
+        height: 100%;
+        width: 600px;
+        background-color:var(--black_main);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hd-container-hamburger{
+        display: none;
+    }
+}
+
+@media(max-width:880px){
+    #header-button-container{
+        display: none;
+    }
+    .hamburger-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+    .hd-container-hamburger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        background-color: black;
+    }
+    .hd-container-hamburger div{
+        width: 100%;
+        height: 3px;
+        background-color: white;
+    }
+    .hd-container-hamburger div:nth-child(1){
+        width: 50%;
+    }
+    .hd-container-hamburger div:nth-child(3){
+        width: 80%;
+    }
+
+
+}
+
+#header-button-container > a{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    justify-content: center;
+    font-weight: 500;
+
+}
+/* 아티클 부모 */
+
+article{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: min(1200px , 100%);
+    padding: 90px 40px 50px;
+    background-color: black;
+}
+#article-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    gap: 10px;
+    justify-content: center;
+    
+}
+/* 바제네레이션 */
+article #bar-generation{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+#bar-generation div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+
+}
+#prevgen{
+    position: absolute;
+    right: 0px;
+    font-size: 15px;
+
+}
+/* section-wrap 기본+컨테이너 */
+@media(min-width:1200px){
+    .sec-cover{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0;
+        column-gap: 10px;
+    }
+}
+@media(max-width:1200px){
+    .sec-cover{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        padding: 0;
+        column-gap: 10px;
+    }
+}
+@media(max-width:650px){
+    .sec-cover{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        padding: 0;
+        column-gap: 10px;
+    }
+}
+
+.section-wrap{
+    display: flex;
+    flex: 1 1 calc(33% - 50px);
+    height: 150px;
+    justify-content:left;
+    align-items: start;
+    background-color: #333;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+/* 픽인포 */
+.pic-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    font-size: 15px;
+}
+.pic-info div p{
+    background-color: #2188b6;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+
+.section-container{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding: 16px;
+    flex-direction: column;
+    color: white;
+}
+/* 퍼스널 멘트 */
+.personal-mention{
+    padding: 16px 0 0;
+}
+/* 프로젝트 컨테이너 햄버거 */
+.section-container .container-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 20px;
+    background-color: #333;
+}
+.section-container .container-hamburger div{
+    width: 100%;
+    height: 3px;
+    background-color: rgba(236, 236, 236, 0.466);
+}
+
+/* 팀섹션 호버 애니메이션 */
+.section-wrap:hover .yasuo-pic img{
+    scale:1.1;
+    transition: scale 0.3s ease;
+}
+
+.section-wrap:hover .container-hamburger :nth-child(1) {
+    margin-right: auto;
+    width: 50%; /* 가로 너비를 줄임 */
+    height: 2px;
+    transition: height 0.4s ease; /* 부드럽게 변화 */
+    transition: width 0.4s ease; /* 부드럽게 변화 */
+
+}
+.section-wrap:hover .container-hamburger :nth-child(3) {
+    margin-left: auto;
+    width: 50%; /* 가로 너비를 줄임 */
+    height: 2px;
+    transition: width 0.5s ease; /* 부드럽게 변화 */
+}
+.section-wrap:hover{
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+/* ------------------------------------- */
+
+.person-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    align-items: center;
+    padding:10px;
+}
+.person-info > ul >li{
+    background-color:rgba(236, 236, 236, 0.466);
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 3px;
+}
+.person-info > ul :nth-child(1){
+    background-color: #2188b6;
+}
+.person-info >p{
+    font-size: 1.6rem;
+    text-align: left;
+}
+.person-info >ul{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.person-info > span {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-align: left;
+}
+.yasuo-pic{
+    display: flex;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.yasuo-pic img{
+    width: 100%;
+    padding: 1rem 1rem;
+    object-fit: contain;
+}
+
+/* 푸터 */
+
+
+footer{
+    width: 100%;
+    padding: 40px;
+    background-color: #333;
+}
+#footer-icons >ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px
+}
+
+#footer-icons ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50px;
+}
+#footer-icons ul li img{
+    width: 18px;
+    height: 18px;
+}
+#footer-wrap{
+    display: flex;
+    flex-direction: row;
+    width: min(1200px , 100%);
+    background-color: #333;
+    padding: 0 40px;
+    gap:10px;
+}
+#footer-contact{
+    display: flex;
+    flex-direction: column;
+    padding:0 100px 0 0 ;
+    gap:10px
+}
+#footer-contact > a{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+#footer-contact > #contact-email{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#footer-contact > #contact-email > span{
+    font-size:12px ;
+    color: white;
+}
+#footer-contact > #contact-email div{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#footer--nav{
+    display: flex;
+    justify-content: center;
+    flex:1;
+}
+#footer--nav >ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#footer--nav >ul li{
+    color: white;
+    font-size: 15px;
+}
+#footer--nav >ul li> span:nth-child(2){
+    color: #949494;
+    font-size: 15px;
+}
