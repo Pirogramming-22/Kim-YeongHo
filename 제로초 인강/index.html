@@ -271,8 +271,25 @@
             font-size: 1.4rem;
             line-height: 20px;
         }
-        #nav > a{
+        #nav a{
             text-decoration: none;
+            text-align: center;
+        }
+        #nav a div{
+            width: 44px;
+            height: 44px;
+            margin: 0 auto;
+
+        }
+        #nav a div ::after{
+            content: '';
+            display: inline-block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+            background-size: 452px 436px;
+            background-position: -205px -219px;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
         }
         #nav a:visited{
             color: black;
