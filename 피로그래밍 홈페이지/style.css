@@ -116,6 +116,7 @@ article{
 }
 /* 바제네레이션 */
 article #bar-generation{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,9 +124,18 @@ article #bar-generation{
     height: 40px;
     margin-bottom: 16px;
 }
-article #bar-generation > span{
-    text-align: center;
+#bar-generation div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 25px;
+
+}
+#prevgen{
+    position: absolute;
+    right: 0px;
+    font-size: 15px;
 
 }
 /* 팀섹션 기본+플젝컨테이너 */
