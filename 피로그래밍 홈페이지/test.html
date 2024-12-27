@@ -1,37 +1,121 @@
-<div class="flex-container">
-    <div class="flex-item">1</div>
-    <div class="flex-item">2</div>
-    <div class="flex-item">3</div>
-  </div>
-  
-  <style>
-  .flex-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  .flex-item {
-    background-color: #61dafb;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    flex: 1 1 calc(33.33% - 60px);
-    margin: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .flex-item {
-      flex: 1 1 calc(50% - 60px);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .flex-item {
-      flex: 1 1 100%;
-    }
-  }
-  </style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피로그래밍</title>
+    <link rel="stylesheet" href="./test-reset.css">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div id="wrap">
+        <div id="main">
+            <header>
+                <div id="header-container" >
+                    <a href = "#" id="header-svg">
+                        <div>
+                            <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/images/icons/logo.svg" alt="logo">
+                        </div>
+                    </a>
+                    <div id = "header-button-container">
+                        <a href="#" id="home" >
+                            <span class = "text-white">Home</span>
+                        </a>
+                        <a href="#" id="aboutus" >
+                            <span class = "text-white">About us</span>
+                        </a>
+                        <a href="#" id="portfolio" >
+                            <span class = "text-white">Portfolio</span>
+                        </a>
+                        <a href="#" id="interview" >
+                            <span class = "text-white">interview</span>
+                        </a>
+                        <a href="#" id="gallery" >
+                            <span class = "text-white">Gallery</span>
+                        </a>
+                        <a href="#" id="recruit" >
+                            <span class = "text-white">Recruit</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <article>
+                <div id="article-wrap">
+                    <div id="bar-generation">
+                        <span class="text-white">21기</span>
+                    </div>
+                    <div id="teamA" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./hirehub_logo514.jpg" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                <span>HireHub</span>
+                                <p>효율적인 인재영입의 시작</p>
+                                <ul>
+                                    <li>이건희</li>
+                                    <li>손영웅</li>
+                                    <li>장지요</li>
+                                    <li>전지훈</li>
+                                    <li>주유민</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teamB" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./feelbuddy_logo.jpeg" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teamC" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./aayo_png.png" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teamD" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./pirotime_logo.png" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teamE" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./oddy_logo.png" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teamF" class="team-section">
+                        <div class="project-container">
+                            <div class="project-pic">
+                                <img src="./dongaritime_logo.png" alt="project logo">
+                            </div>
+                            <div class="project-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
