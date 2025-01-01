@@ -6,7 +6,109 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+  /* size */
+  --size-thumbnail:50px;
+  --size-border:4px;
+  --size-button:60px;
+  --font-size:18px;
+  --base-space:8px;
+
+  /* animation */
+  --animation-duration:0.3s;
 }
 * {
   box-sizing: border-box;
+}
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+  width: 10px; /* 스크롤바 너비 */
+}
+
+/* 스크롤바 트랙 */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* 트랙 색상 */
+  border-radius: 10px; /* 트랙 모서리 둥글게 */
+}
+
+/* 스크롤바 핸들 (슬라이더) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* 핸들 색상 */
+  border-radius: 10px; /* 핸들 모서리 둥글게 */
+  border: 2px solid #f0f0f0; /* 핸들 외곽 */
+}
+
+/* 스크롤바 핸들 (호버 상태) */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-black); /* 호버 시 핸들 색상 */
+}
+
+body{
+  height: 100dvh;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  cursor:pointer;
+  transition: transform var(--animation-duration) ease-in-out;
+}
+.Buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease-in-out;
+  margin-right: var(--base-space);
+}
+
+.btn:hover , .logo:hover{
+  transform: scale(1.1);
+}
+
+.imgBtn{
+  width: var(--size-button);
+  height: var(--size-button);
+}
+.colorBtn{
+  font-size: var(--font-size);
+  padding: calc(2*var(--base-space));
+  border-radius: var(--size-border);
+}
+.blue{
+  background-color: var(--color-blue);
+}
+.yellow{
+  background-color: var(--color-yellow);
+}
+.pink{
+  background-color: var(--color-pink);
+}
+.items{
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0px;
+  overflow-y: scroll;
+}
+.item{
+  margin-bottom: var(--base-space);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--base-space);
+}
+.item__thumbnail{
+  width: var(--size-thumbnail);
+}
+.item__description{
+  margin-left:var(--base-space);
+  font-size: var(--font-size);
 }
