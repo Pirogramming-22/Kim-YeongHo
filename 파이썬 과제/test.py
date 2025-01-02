@@ -1,6 +1,6 @@
-class NotPalindromeError(Exception):
-    def __init__(self):
-        super().__init__('회문이 아닙니다.')
+# class NotPalindromeError(Exception):
+#     def __init__(self):
+#         super().__init__('회문이 아닙니다.')
 
 def palindrome(word):
     wordReverse= ''.join(reversed(word))
