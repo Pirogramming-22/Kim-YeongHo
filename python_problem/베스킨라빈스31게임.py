@@ -24,18 +24,18 @@ def player_declare(num,baskin,status):
     for i in range(num):
         baskin +=1
         if(status == True):
-            print("PlayerA:",baskin)
+            print("player:",baskin)
         else:
-            print("PlayerB:",baskin)
+            print("Computer:",baskin)
         if(baskin == 31):
             return baskin
     return baskin
 """ 우승자 출력 """
 def printWinner(status):    
     if(status == False):
-        print("PlayerB win!")
+        print("Computer win!")
     else:
-        print("PlayerA win!")
+        print("Player win!")
 """ 게임 전체 코드 """
 def brGame():
 
@@ -49,7 +49,7 @@ def brGame():
             baskin = player_declare(num,baskin,status)
             status = not status
         else: #플레이어 2의 차례
-            num = Input_num(num)
+            num = randint(1,3)
             baskin = player_declare(num,baskin,status)
             status = not status
     printWinner(status)
