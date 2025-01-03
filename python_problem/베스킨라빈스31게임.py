@@ -43,7 +43,12 @@ while(baskin <31):
         baskin = player_declare(num,baskin,status)
         status = not status
     else: #플레이어 2의 차례
-        num = randint(1,3)
+        num = Input_num(num)
         baskin = player_declare(num,baskin,status)
         status = not status
+    
+# if(status == False):
+#     print("PlayerB win!")
+# else:
+#     print("PlayerA win!")
 
