@@ -47,8 +47,8 @@ while(baskin <31):
         baskin = player_declare(num,baskin,status)
         status = not status
     
-# if(status == False):
-#     print("PlayerB win!")
-# else:
-#     print("PlayerA win!")
+if(status == False):
+    print("PlayerB win!")
+else:
+    print("PlayerA win!")
 
