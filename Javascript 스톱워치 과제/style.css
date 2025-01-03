@@ -1,0 +1,189 @@
+:root{
+    --main-color:rgb(147, 188, 157);
+}
+
+html , body{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+/* 전체 컨테이너 디자인 */
+.container{
+    background-color: white;
+    width: 45%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 피로그래밍 스톱워치 이름 부분 */
+.name{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* 스톱워치 디자인 */
+.stop-watch{
+    background-color: var(--main-color);
+    width: 80%;
+    height: 30%;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.stop-watch .white-box{
+    width: 80%;
+    height: 33.333%;
+    border-radius: 15px;
+    background-color: #f4f4f4;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.white-box span{
+    font-size: 50px;
+    font-weight: bold;
+}
+.stop-watch ul{
+    width: 70%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+.stop-watch ul li{
+    background-color: rgb(218, 218, 218);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.stop-watch ul li button{
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: inherit;
+}
+
+
+/* 기록 부분 */
+
+.records{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-direction: column;
+}
+.records-header{
+    width: 90%;
+    background-color: var(--main-color);
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.records-header svg{
+    cursor: pointer;
+}
+/* ---------- */
+.records-container{
+    width: 90%;
+    height: 300px;
+    overflow-y: auto;
+
+}
+.records-content{
+    padding-block: 10px;
+    background-color: white;
+    border: 1px solid black;
+
+    
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.records-content svg{
+    cursor: pointer;
+}
+.records-content > :nth-child(2){
+    padding-inline: 15px;
+}
+.records-content .transparent-item{
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
+
+
+
+/* 전체 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 12px;  /* 스크롤바 너비 */
+    height: 12px; /* 가로 스크롤바 높이 */
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;  /* 스크롤 트랙 색상 */
+    border-radius: 10px;
+}
+
+/* 스크롤바 핸들 (움직이는 부분) */
+::-webkit-scrollbar-thumb {
+    background-color: #888;  /* 스크롤 핸들 색상 */
+    border-radius: 10px;
+    border: 2px solid transparent; /* 여백 효과 */
+    background-clip: padding-box;  /* 경계 내부 여백 */
+}
+
+/* 스크롤바 핸들 hover 효과 */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;  /* 핸들 hover 색상 */
+}
+
+/* 가로 스크롤바에 별도 스타일 지정 (선택사항) */
+::-webkit-scrollbar-horizontal {
+    height: 8px;
+}
