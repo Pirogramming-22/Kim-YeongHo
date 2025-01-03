@@ -61,7 +61,7 @@ function appendRecordsContainer(){
                         <svg class="unSelectedButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
                         </svg>
-                        <svg class="SelectedButton hidden" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                        <svg class="SelectedButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
                             <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"></path>
                         </svg>
@@ -95,7 +95,6 @@ resetButton.addEventListener("click" , ()=>{resetButtonClick()})
 /* 전체선택 기능 구현    */
 const AllheaderButtons = document.querySelector(".header-svg-button");
 const AllSelectButton = AllheaderButtons.querySelector(".SelectedButton");
-console.log(AllSelectButton);
 const AllUnSelectButton = AllheaderButtons.querySelector(".unSelectedButton");
 
 AllUnSelectButton.addEventListener("click",()=>{
@@ -103,13 +102,35 @@ AllUnSelectButton.addEventListener("click",()=>{
     AllSelectButton.style.display = "block";
 
     /* 모두 체크 하는 기능 */
-})
+    const allContainer = document.querySelectorAll(".content__svg-slc-container");
 
+    allContainer.forEach((container)=>{
+        const svgUnselec = container.querySelector(".unSelectedButton");
+        const svgSelec = container.querySelector(".SelectedButton");
+
+        if(getComputedStyle(svgUnselec).display == "block"){
+            svgUnselec.style.display = "none";
+            svgSelec.style.display = "block";
+        }
+    })
+})
 AllSelectButton.addEventListener("click",()=>{
     AllSelectButton.style.display = "none";
     AllUnSelectButton.style.display = "block";
 
-    /* 모두 체크를 푸는 기능능 */
+    /* 모두 체크 하는 기능 */
+    const allContainer = document.querySelectorAll(".content__svg-slc-container");
+    console.log(allContainer);
+
+    allContainer.forEach((container)=>{
+        const svgUnselec = container.querySelector(".unSelectedButton");
+        const svgSelec = container.querySelector(".SelectedButton");
+
+        if(getComputedStyle(svgSelec).display == "block"){
+            svgSelec.style.display = "none";
+            svgUnselec.style.display = "block";
+        }
+    })
 })
 
 /* 클리어 기능 구현 */

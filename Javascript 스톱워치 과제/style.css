@@ -179,15 +179,12 @@ body {
 
     cursor:pointer;
 }
-
-.hidden{
-    display: none;
-}
-
-.visible{
+.unSelectedButton{
     display: block;
 }
-
+.SelectedButton{
+    display:none;
+}
 
 /* 전체 스크롤바 스타일 */
 ::-webkit-scrollbar {
