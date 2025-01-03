@@ -30,25 +30,28 @@ def player_declare(num,baskin,status):
         if(baskin == 31):
             return baskin
     return baskin
-
+""" 우승자 출력 """
+def printWinner(status):    
+    if(status == False):
+        print("PlayerB win!")
+    else:
+        print("PlayerA win!")
 """ 게임 전체 코드 """
+def brGame():
 
-num = 0
-baskin = 0
-status = True
+    num = 0
+    baskin = 0
+    status = True
 
-while(baskin <31):
-    if(status == True): #플레이어 1의 차례
-        num = Input_num(num)
-        baskin = player_declare(num,baskin,status)
-        status = not status
-    else: #플레이어 2의 차례
-        num = Input_num(num)
-        baskin = player_declare(num,baskin,status)
-        status = not status
+    while(baskin <31):
+        if(status == True): #플레이어 1의 차례
+            num = Input_num(num)
+            baskin = player_declare(num,baskin,status)
+            status = not status
+        else: #플레이어 2의 차례
+            num = Input_num(num)
+            baskin = player_declare(num,baskin,status)
+            status = not status
+    printWinner(status)
     
-if(status == False):
-    print("PlayerB win!")
-else:
-    print("PlayerA win!")
-
+brGame()
