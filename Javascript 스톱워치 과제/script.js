@@ -120,7 +120,6 @@ AllSelectButton.addEventListener("click",()=>{
 
     /* 모두 체크 하는 기능 */
     const allContainer = document.querySelectorAll(".content__svg-slc-container");
-    console.log(allContainer);
 
     allContainer.forEach((container)=>{
         const svgUnselec = container.querySelector(".unSelectedButton");
@@ -145,8 +144,11 @@ clearButton.addEventListener("click" ,()=>{
             record.remove();
         }
     })
+    const AllheaderButtons = document.querySelector(".header-svg-button");
+    const AllSelectButton = AllheaderButtons.querySelector(".SelectedButton");
+    const AllUnSelectButton = AllheaderButtons.querySelector(".unSelectedButton");
+    AllSelectButton.style.display = "none";
+    AllUnSelectButton.style.display = "block";
+
 })
 /* ------------------------- */
-
-
-/* tests */
