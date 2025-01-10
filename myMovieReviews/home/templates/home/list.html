@@ -7,11 +7,11 @@
     {% for review in reviews %}
     <div class="reviewContainer fade-up">
         <div class="imageContainer">
-            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88992/88992_1000.jpg" alt="sbg_poster">
-        </div>
+            <img src="{{review.posterURL}}" alt="sbg_poster">
+        </div>  
         <div class="infoContainer">
             <div class="Title">
-                <a href="{% url 'home:detail' %}" class="TitleBtn">{{review.title}}</a>
+                <a href="{% url 'home:detail' review.pk%}" class="TitleBtn">{{review.title}}</a>
             </div>
             <div class="extraInfo releasedYear">
                 <p class="info_gray">개봉년도: </p>
@@ -23,7 +23,7 @@
             </div>
             <div class="extraInfo star">
                 <p class="info_gray">별점: </p>
-                <p>{{review.stars}}점</p>
+                <p>{{review.stars}}</p>
             </div>
         </div>
     </div>
