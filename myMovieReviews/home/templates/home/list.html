@@ -1,0 +1,42 @@
+{% extends 'home/base.html' %}
+{% block content%}
+<div class="articleInfo">
+    <h2>Today Reviews</h2>
+</div>
+<section class="reviews">
+    {% for review in reviews %}
+    <div class="reviewContainer fade-up">
+        <div class="imageContainer">
+            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88992/88992_1000.jpg" alt="sbg_poster">
+        </div>
+        <div class="infoContainer">
+            <div class="Title">
+                <a href="#" class="TitleBtn">{{review.title}}</a>
+            </div>
+            <div class="extraInfo releasedYear">
+                <p class="info_gray">개봉년도: </p>
+                <p>{{review.releasedYear}}년</p>
+            </div>
+            <div class="extraInfo genre">
+                <p class="info_gray">장르: </p>
+                <p>{{review.genre}}</p>
+            </div>
+            <div class="extraInfo star">
+                <p class="info_gray">별점: </p>
+                <p>{{review.stars}}점</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            const elements = document.querySelectorAll(".fade-up");
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add("visible");
+                }, index * 200); // 요소별로 살짝 딜레이를 줌
+            });
+        });
+    </script>
+    {% endfor %}
+</section>
+{% endblock %}
