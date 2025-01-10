@@ -8,54 +8,57 @@
         <span >Reviews</span>
     </a>
     <div class="bar-gray"></div>
-    <div class="inputs" id="titleInput">
-        <p>제목 :</p>
-        <input type="text">
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>개봉년도 :</p>
-        <input type="number" name="year" min="4" max="4">
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>장르 :</p>
-        <select id="genre" name="genre">
-            <option value="" disabled selected>======</option>
-            <option value="drama">드라마</option>
-            <option value="comedy">코미디</option>
-            <option value="action">액션</option>
-            <option value="horror">공포</option>
-            <option value="romance">로맨스</option>
-        </select>
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>별점 :</p>
-        <select id="stars" name="stars">
-            <option value="" disabled selected>====</option>
-            <option value="1">1점</option>
-            <option value="2">2점</option>
-            <option value="3">3점</option>
-            <option value="4">4점</option>
-            <option value="5">5점</option>
-        </select>
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>러닝타임(분) :</p>
-        <input type="number">
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>리뷰 :</p>
-        <textarea name="reviewText" id="reviewText" rows="10" cols="100"></textarea>
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>감독 :</p>
-        <input type="name" min="2" max="4">
-    </div>
-    <div class="inputs" id="titleInput">
-        <p>배우 :</p>
-        <input type="text">
-    </div>
-    <div>
-        <input type="submit" name="submit" id="DetailsubmitBtn">
-    </div>
+    <form method = "POST" action="{% url 'home:index'%}">
+        {% csrf_token %}
+        <div class="inputs" id="titleInput">
+            <p>제목 :</p>
+            <input type="text" name="title">
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>개봉년도 :</p>
+            <input type="number" name="releasedYear" min="1900" max="2025">
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>장르 :</p>
+            <select id="genre" name="genre">
+                <option value="" disabled selected>======</option>
+                <option value="drama">드라마</option>
+                <option value="comedy">코미디</option>
+                <option value="action">액션</option>
+                <option value="horror">공포</option>
+                <option value="romance">로맨스</option>
+            </select>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>별점 :</p>
+            <select id="stars" name="stars">
+                <option value="" disabled selected>====</option>
+                <option value="1">1점</option>
+                <option value="2">2점</option>
+                <option value="3">3점</option>
+                <option value="4">4점</option>
+                <option value="5">5점</option>
+            </select>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>러닝타임(분) :</p>
+            <input type="number" name="runningtime">
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>리뷰 :</p>
+            <textarea name="reviewText" id="reviewText" name = "reviewText" rows="10" cols="100"></textarea>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>감독 :</p>
+            <input type="name" name="director" minlength="2" maxlength="4">
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>배우 :</p>
+            <input type="text" name="actors">
+        </div>
+        <div class="submitContainer">
+            <input type="submit" name="submit" id="DetailsubmitBtn">
+        </div>
+    </form>
 </div>
 {% endblock %}

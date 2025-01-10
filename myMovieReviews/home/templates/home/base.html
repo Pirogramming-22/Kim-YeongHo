@@ -23,12 +23,12 @@
 </head>
 <body>
     <header>
-        <a href="#" class="headName">
+        <a href="{% url 'home:index' %}" class="headName">
             <span>My</span>
             <span class="headName Movie">Movie</span>
             <span >Reviews</span>
         </a>
-        <a href="#" class="addReviewBtn">
+        <a href="{% url 'home:add' %}" class="addReviewBtn">
             <span>Add a New Review</span>
         </a>
     </header>
