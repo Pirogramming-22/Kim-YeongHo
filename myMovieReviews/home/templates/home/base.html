@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piro_Movie_Reviews</title>
+    <!-- favicon -->
+    <link rel="icon" href="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/images/favicons/apple-icon-57x57.png">
+    <!-- Eng Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+    <!-- Kor Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Brush+Script&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">    <!-- CSS -->
+
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+</head>
+<body>
+    <header>
+        <a href="{% url 'home:index' %}" class="headName">
+            <span>My</span>
+            <span class="headName Movie">Movie</span>
+            <span >Reviews</span>
+        </a>
+        <a href="{% url 'home:add' %}" class="addReviewBtn">
+            <span>Add a New Review</span>
+        </a>
+    </header>
+
+    <article>
+        {% block content%}
+        {% endblock %}
+    </article>
+
+    <footer>
+        <p>Copyright 2025 Piro_Movie_Reviews</p>
+    </footer>
+</body>
+</html>

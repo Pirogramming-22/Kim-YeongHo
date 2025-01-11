@@ -1,0 +1,99 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="articleOutline review">
+    <a href="#" class="headName review">
+        <span>My</span>
+        <span class="headName Movie">Movie</span>
+        <span >Reviews</span>
+    </a>
+    <div class="bar-gray"></div>
+    <form method = "POST" action="{% url 'home:detail' movie.pk%}">
+        {% csrf_token %}
+        <div class="inputs" id="titleInput">
+            <p>제목 :</p>
+            <input 
+            type="text" 
+            name="title"
+            value="{{movie.title}}"
+            required
+            >
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>개봉년도 :</p>
+            <input type="number" name="releasedYear" min="1900" max="2025" value="{{movie.releasedYear}}"  required>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>장르 :</p>
+            <select id="genre" name="genre"  required>
+                <option value="" disabled {% if not movie.genre %}selected{% endif %}>======</option>
+                <option value="드라마" {% if movie.genre == "드라마" %}selected{% endif %}>드라마</option>
+                <option value="코미디" {% if movie.genre == "코미디" %}selected{% endif %}>코미디</option>
+                <option value="액션" {% if movie.genre == "액션" %}selected{% endif %}>액션</option>
+                <option value="공포" {% if movie.genre == "공포" %}selected{% endif %}>공포</option>
+                <option value="로맨스" {% if movie.genre == "로맨스" %}selected{% endif %}>로맨스</option>
+            </select>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>별점 :</p>
+            <select id="stars" name="stars"  required>
+                <option value="" disabled {% if not movie.stars %}selected{% endif %}>====</option>
+                <option value="1점" {% if movie.stars == "1점" %}selected{% endif %}>1점</option>
+                <option value="2점" {% if movie.stars == "2점" %}selected{% endif %}>2점</option>
+                <option value="3점" {% if movie.stars == "3점" %}selected{% endif %}>3점</option>
+                <option value="4점" {% if movie.stars == "4점" %}selected{% endif %}>4점</option>
+                <option value="5점" {% if movie.stars == "5점" %}selected{% endif %}>5점</option>
+            </select>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>러닝타임(분) :</p>
+            <input type="number" name="runningtime" value="{{movie.runningTime}}"  required>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>리뷰 :</p>
+            <textarea name="reviewText" id="reviewText" name = "reviewText" rows="10" cols="100"  required>{{movie.comments}}</textarea>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>감독 :</p>
+            <input type="name" name="director" minlength="2" maxlength="4" value="{{movie.director}}"  required>
+        </div>
+        <div class="inputs" id="titleInput">
+            <p>배우 :</p>
+            <input type="text" name="actors" value="{{movie.actors}}"  required>
+        </div>
+        <div class="inputs">
+            <p>포스터URL(없으면 주인장 최애포스터) :</p>
+            <input type="text" name="URLS" value="{{movie.posterURL}}"  required>
+        </div>
+        <div class="submitContainer">
+            <input type="submit" name="submit" id="DetailsubmitBtn">
+        </div>
+    </form>
+    <script>
+        document.getElementById('movieForm').addEventListener('submit', function(event) {
+            const form = event.target;
+            const requiredFields = [
+                { name: 'title', label: '제목' },
+                { name: 'releasedYear', label: '개봉년도' },
+                { name: 'genre', label: '장르' },
+                { name: 'stars', label: '별점' },
+                { name: 'runningtime', label: '러닝타임' },
+                { name: 'reviewText', label: '리뷰' },
+                { name: 'director', label: '감독' },
+                { name: 'actors', label: '배우' },
+                { name: 'URLS', label: '포스터 URL' }
+            ];
+        
+            for (const field of requiredFields) {
+                const input = form.elements[field.name];
+                if (!input || input.value.trim() === '') {
+                    event.preventDefault();  // 폼 제출 방지
+                    alert(`${field.label}을(를) 입력해주세요!`);
+                    input.focus();  // 해당 필드로 포커스 이동
+                    return;
+                }
+            }
+        });
+    </script>
+</div>
+{% endblock %}

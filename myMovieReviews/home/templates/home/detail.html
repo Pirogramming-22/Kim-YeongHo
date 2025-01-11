@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="articleHeader">
+    <p>{{movie.title}}</p>
+    <div class="editDelete">
+        <form action="{% url 'home:edit' movie.pk %}" method = "POST">
+            {% csrf_token %}    
+            <button type="submit">
+                수정
+            </button>
+        </form>
+        <form action="{% url 'home:delete' movie.pk %}" method="POST">
+            {%csrf_token%}
+            <button type="submit">
+                삭제
+            </button>
+        </form>
+    </div>
+</div>
+<div class="articleOutline">
+    <div class="imageContainer">
+        <img src="{{movie.posterURL}}" alt="sbg_poster">
+    </div>
+    <div class="infoContainer detail">
+        <div class="extraInfo releasedYear detail">
+            <p class="info_gray">개봉년도: </p>
+            <p>{{movie.releasedYear}}</p>
+        </div>
+        <div class="extraInfo director detail">
+            <p class="info_gray">감독: </p>
+            <p>{{movie.director}}</p>
+        </div>
+        <div class="extraInfo actors detail">
+            <p class="info_gray">출연: </p>
+            <p>{{movie.actors}}</p>
+            <p class="info_gray">외 다수</p>
+        </div>
+        <div class="extraInfo genre detail">
+            <p class="info_gray">장르: </p>
+            <p>{{movie.genre}}</p>
+        </div>
+        <div class="extraInfo star detail">
+            <p class="info_gray">별점: </p>
+            <p>{{movie.stars}}</p>
+        </div>
+        <div class="extraInfo runningtime detail">
+            <p class="info_gray">러닝타임: </p>
+            <p>{{movie.runningTime}}</p>
+            <p class="info_gray">분</p>
+        </div>
+    </div>
+</div>
+<div class="articleOutline detail">
+    <p>{{movie.comments}}</p>
+</div>
+{% endblock %}

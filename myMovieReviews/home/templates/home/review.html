@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="articleOutline review">
+    <a href="#" class="headName review">
+        <span>My</span>
+        <span class="headName Movie">Movie</span>
+        <span >Reviews</span>
+    </a>
+    <div class="bar-gray"></div>
+    <form method = "POST" action="{% url 'home:index'%}">
+        {% csrf_token %}
+        <div class="inputs">
+            <p>제목 :</p>
+            <input type="text" name="title"  required>
+        </div>
+        <div class="inputs">
+            <p>개봉년도 :</p>
+            <input type="number" name="releasedYear" min="1900" max="2025"  required>
+        </div>
+        <div class="inputs">
+            <p>장르 :</p>
+            <select id="genre" name="genre"  required>
+                <option value="" disabled selected>======</option>
+                <option value="드라마">드라마</option>
+                <option value="코미디">코미디</option>
+                <option value="액션">액션</option>
+                <option value="공포">공포</option>
+                <option value="로맨스">로맨스</option>
+            </select>
+        </div>
+        <div class="inputs">
+            <p>별점 :</p>
+            <select id="stars" name="stars"  required>
+                <option value="" disabled selected>====</option>
+                <option value="1점">1점</option>
+                <option value="2점">2점</option>
+                <option value="3점">3점</option>
+                <option value="4점">4점</option>
+                <option value="5점">5점</option>
+            </select>
+        </div>
+        <div class="inputs">
+            <p>러닝타임(분) :</p>
+            <input type="number" name="runningtime"  required>
+        </div>
+        <div class="inputs">
+            <p>리뷰 :</p>
+            <textarea name="reviewText" id="reviewText" name = "reviewText" rows="10" cols="100"  required></textarea>
+        </div>
+        <div class="inputs">
+            <p>감독 :</p>
+            <input type="name" name="director" minlength="2" maxlength="4"  required>
+        </div>
+        <div class="inputs">
+            <p>배우 :</p>
+            <input type="text" name="actors"  required>
+        </div>
+        <div class="inputs">
+            <p>포스터URL(없으면 주인장 최애포스터) :</p>
+            <input type="text" name="URLS" value="https://i.namu.wiki/i/uaZfwp4I7TaQoeQhJm_ep2LQbd5SyNtW4wsGXY3D6DLznkgn1rOgcGLrp9yX0W3D6cOYqK6riliz4F1oA3sZ2NcvazsWEOQNLM47-tSFI30DwvYdAT3O-k9ukBpo33928trWYOiOGRVo4gg1C7JB6g.webp"  required>
+        </div>
+        <div class="submitContainer">
+            <input type="submit" name="submit" id="DetailsubmitBtn">
+        </div>
+    </form>
+</div>
+{% endblock %}
