@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <article>
+
+        </article>
+        <input type="button" value="fetch" onclick="
+            fetch('html').then(
+                function(response){
+                    if(response.status == '404'){alert('404 Not found');}
+                    else if(response.status == '200'){alert('200 well founded');}
+                }
+            )
+            "/>
+    </body>
+</html>
