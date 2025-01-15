@@ -1,0 +1,78 @@
+{% extends 'post/base.html' %}
+{% load static %}
+
+{% block pageNav%}
+<span class="pageNavTitle">Idea Detail</span>
+<span class="pageNavSubtitle">아이디어 세부 페이지입니다. 당신이 구현하려 하는 아이디어들을 자세히 살펴보세요.</span>
+
+{% endblock %}
+
+{% block pageContent %}
+<div class="pageContentDetail">
+    <div class="detailLeftContainer">
+        {% if post.image %}
+        <img src={{ post.image.url }} alt="대체텍스트">
+        {% else %}
+        <img src="{% static "photo/No_Image_Available.jpg" %}" alt="대체텍스트">
+        {% endif %}
+    </div>
+    <div class="detailRightContainer">
+        <div class="detail_RC_Title lightYellow">
+            <span>{{post.title}}</span>
+                
+            <svg xmlns="http://www.w3.org/2000/svg" id="starIcon" width="32" height="32" 
+                class="bi bi-star-fill" viewBox="0 0 16 16"
+                fill= {% if post.star %}"yellow"{%else%}"gray"{%endif%}; cursor="pointer";>
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const starIcon = document.getElementById('starIcon');
+                starIcon.addEventListener('click', () => {
+                    const postId = {{ post.pk }};
+                    fetch(`/post/${postId}/toggle_star/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'  // Django CSRF 보호용 토큰
+                        },
+                        body: JSON.stringify({}),
+                    })
+                    .then(response => response.json())  // 응답을 JSON으로 변환
+                    .then(data => {
+                        if (data.success) {
+                            const isStarred = data.starred;
+                            starIcon.style.fill = isStarred ? 'yellow' : 'gray';  // 색상 변경
+                        } else {
+                            alert('찜 상태 변경에 실패했습니다.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('오류:', error);
+                        alert('서버 오류가 발생했습니다.');
+                    });
+                });
+            });
+        </script>
+        <div class="detail_RC_Interest">
+            <p class = "detail_subtitle white">아이디어 관심도</p>
+            <p>{{post.interest}}</p>
+
+        </div>
+        <div class="detail_RC_expectedTools">
+            <a href="{% url 'DevTool:toolDetail' post.expectedTool.pk %}" class="detail_subtitle white">예상개발툴</a>
+            <p>{{post.expectedTool}}</p>
+        </div>
+        <div class="detail_RC_Info">
+            <p class="detail_subtitle white">아이디어 설명</p>
+            <p>{{post.explanation}}</p>
+        </div>
+    </div>
+</div>
+<div class="detailButtons">
+    <a class="detailButton deleteButton" href="{% url 'post:ideaDelete' post.pk %}">삭제</a>
+    <a class="detailButton listButton" href="{% url 'post:ideaManage' %}">목록</a>
+    <a class="detailButton editButton" href="{% url 'post:ideaUpdate' post.pk%}">수정</a>
+</div>
+{% endblock %}

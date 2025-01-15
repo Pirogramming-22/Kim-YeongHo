@@ -1,0 +1,35 @@
+{% extends 'DevTool/base.html' %}
+{% load static %}
+
+{% block pageNav%}
+<span class="pageNavTitle">Idea Detail</span>
+<span class="pageNavSubtitle">아이디어 세부 페이지입니다. 당신이 구현하려 하는 아이디어들을 자세히 살펴보세요.</span>
+
+{% endblock %}
+
+{% block pageContent %}
+<div class="pageContentDetail">
+   <div class="content toolNameContainer">
+        <span>{{tool.name}}</span>
+   </div>
+   <div class="content toolCatnExContainer">
+        <div class= "verVar"></div>
+        <div class="CatnEx">
+            <p class="toolCat">{{tool.category}}</p>
+            <p class="toolExp">{{tool.explanation}}</p>
+        </div>        
+   </div>
+   <div class=" horVar"></div>
+   <div class="content">
+        <p class="lightYellow fs20">만들수 있는 SW목록</p>
+        {% for post in relative_posts %}
+        <p>{{post.title}}</p>
+        {% endfor%}
+   </div>
+</div>
+<div class="detailButtons">
+    <a class="detailButton deleteButton" href="{% url 'DevTool:toolDelete' tool.pk %}">삭제</a>
+    <a class="detailButton listButton" href="{% url 'DevTool:toolManage' %}">목록</a>
+    <a class="detailButton editButton" href="{% url 'DevTool:toolUpdate' tool.pk %}">수정</a>
+</div>
+{% endblock %}

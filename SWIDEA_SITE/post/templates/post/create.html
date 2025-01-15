@@ -1,0 +1,30 @@
+{% extends 'post/base.html'%}
+
+{% block pageNav%}
+<span class="pageNavTitle">Idea Register</span>
+<span class="pageNavSubtitle">나만의 아이디어를 등록해보세요!</span>
+<div class = "orderToggle"></div>
+
+{%endblock%}
+
+
+{% block pageContent%}
+<div class="create white">
+    <form class = "IdeaCreateForm" action="{% url 'post:ideaRegister' %}" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_title">아이디어 이름:</label>
+        {{ form.title }}
+        <label for="id_image">Image :</label>
+        {{ form.image }}
+        <label for="id_explanation">아이디어 설명:</label>
+        {{ form.explanation }}
+        <label for="id_interest">아이디어 관심도:</label>
+        {{ form.interest }}
+        <label for="id_expectedTool">예상 개발툴:</label>
+        {{ form.expectedTool }}
+        <div class = "submitContainer">
+            <input class="submitBtn" type="submit" value="SUBMIT">
+        </div>
+    </form>
+</div>
+{%endblock%}

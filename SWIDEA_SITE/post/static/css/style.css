@@ -1,0 +1,252 @@
+@import 'root.css';
+
+html{
+    font-family: "Do Hyeon", serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.EDITNEED{
+    color: var(--bc-red);
+    font-weight: bolder;
+}
+.white{
+    color: white;
+}
+.lightGreen{
+    color: var(--green-light);
+}
+.lightYellow{
+    color:var(--yellow-light);
+}
+.bold{
+    font-weight: 300;
+}
+
+
+/* ----------------------------------------------------------------- */
+.navBar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--background-black);
+
+    border-bottom: 1px solid rgb(128,128,128,0.8);
+}
+.navBar .logo{
+    padding: 20px;
+    font-size: 20px;
+}
+.navButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    flex:1
+}
+/* ----------------------------------------------------------------- */
+.mainSection{
+    flex:1;
+    background-color : transparent;
+    display: flex;
+    background-color: var(--background-black);
+    justify-content: center;
+    align-items: center;
+
+}
+.page{
+    background-color: rgba(255,255,255,0.6);
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageNav{
+    text-align: center;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.pageNav .pageNavTitle{
+    font-size: 30px;
+    color: var(--green-light);
+}
+.orderBar{
+    height: 30px;
+    width: 100%;
+    padding-block: 10px;
+}
+#orderBtn{
+    position: absolute;
+    right:200px;
+
+}
+
+.pageContent{
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: scroll;
+
+}
+.pageContent.create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageContentDetail{
+    border: 1px solid var(--white-border);
+    width: 90%;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+/* list */
+.contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    flex-wrap: nowrap;
+
+
+}
+.contentBox{
+    width: 200px;
+
+    margin-inline: 20px;
+    background-color: skyblue;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.star{
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+.contentImageBox{
+    width: 90%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-block: 10px;
+    position: relative;
+}
+.boundaryLine{
+    width: 100%;
+    height: 2px;
+    background-color: purple;
+    border: none;
+    margin-block: 5px;
+}
+.contentInfo{
+    height: 100px;
+    padding-block: 10px;
+}
+.interestPlusBtn{
+    cursor: pointer;
+}
+.interestMinusBtn{
+    cursor: pointer;
+}
+
+/* create */
+.submitContainer{
+    text-align: center;
+    padding-block: 15px;
+}
+.submitBtn{
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: 1px solid var(--bc-gray);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,10,0.2);
+    padding-inline: 10px;
+}
+.IdeaCreateForm{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* detail */
+
+.detailLeftContainer{
+    width: 350px;
+    aspect-ratio: 1/1;
+    padding-left: 10px;
+    flex-shrink: 0;
+}
+.detailRightContainer{
+    flex:1;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+
+    padding-inline: 20px;
+}
+
+
+.detailButtons{
+    height: 50px;
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    justify-content: center;
+}
+
+.detail_RC_Title{
+    font-size: 35px;
+}
+.detail_subtitle{
+    font-size: 20px;
+    padding-bottom: 3px;
+}
+.detailButton{
+    height:30px;
+    padding-block: 8px;
+    padding-inline: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: center;
+    line-height: 1;
+}
+.deleteButton{
+    background-color: var(--bc-red);
+    color: white;
+}
+.listButton{
+    background-color: var(--bc-gray);
+}
+.editButton{
+    background-color: var(--bc-blue);
+    color: white;
+}
