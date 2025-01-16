@@ -1,0 +1,25 @@
+{% extends 'DevTool/base.html'%}
+
+{% block pageNav%}
+<span class="pageNavTitle">DevTool Register</span>
+<span class="pageNavSubtitle">개발 툴 등록</span>
+
+{%endblock%}
+
+
+{% block pageContent%}
+<div class="create white">
+    <form class = "IdeaCreateForm" action="{% url 'DevTool:toolDetail' pk%}" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_name">이름:</label>
+        {{ form.name }}
+        <label for="id_category">카테고리:</label>
+        {{ form.category }}
+        <label for="id_explanation">설명:</label>
+        {{ form.explanation }}
+        <div class = "submitContainer">
+            <input class="submitBtn" type="submit" value="SUBMIT">
+        </div>
+    </form>
+</div>
+{%endblock%}

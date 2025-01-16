@@ -1,0 +1,232 @@
+@import 'root.css';
+
+html{
+    font-family: "Do Hyeon", serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.EDITNEED{
+    color: var(--bc-red);
+    font-weight: bolder;
+}
+.white{
+    color: white;
+}
+.lightGreen{
+    color: var(--green-light);
+}
+.lightYellow{
+    color:var(--yellow-light);
+}
+.bold{
+    font-weight: 300;
+}
+.fs20{
+    font-size: 20px;
+}
+
+
+/* ----------------------------------------------------------------- */
+.navBar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--background-black);
+
+    border-bottom: 1px solid rgb(128,128,128,0.8);
+}
+.navBar .logo{
+    padding: 20px;
+    font-size: 20px;
+}
+.navButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    flex:1
+}
+/* ----------------------------------------------------------------- */
+.mainSection{
+    flex:1;
+    background-color : transparent;
+    display: flex;
+    background-color: var(--background-black);
+    justify-content: center;
+    align-items: center;
+
+}
+.page{
+    background-color: rgba(255,255,255,0.6);
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageNav{
+    text-align: center;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.pageNav .pageNavTitle{
+    font-size: 30px;
+    color: var(--green-light);
+}
+
+
+.pageContent{
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: scroll;
+
+}
+.pageContent.create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageContentDetail{
+    border: 1px solid var(--white-border);
+    width: 90%;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+/* list */
+.contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.tool{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    border-block: 1px solid var(--bc-gray);
+    text-align: center;
+}
+.tool-name{
+    width: 130px;
+    font-size: 30px;
+    line-height: 1.5;
+
+}
+.toolSecond{
+    font-size: 20px;
+    width: 100px;
+}
+.toolThird{
+    font-size: 15px;
+    width: 520px;
+}
+.alignSpan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alignSpan span{
+    width: 100%;
+    word-wrap: break-word;
+}
+
+/* detail */
+.toolNameContainer{
+    color: var(--green-light);
+    font-size: 50px;
+}
+.content{
+    padding-inline: 20px;
+    padding-block: 10px;
+}
+.toolCatnExContainer{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    gap: 10px;
+}
+.verVar{
+    height: 100%;
+    width: 3px;
+    background-color: antiquewhite;
+}
+.CatnEx{
+    color: var(--yellow-light);
+}
+.toolCat{
+    padding-block: 5px;
+    font-size: 18px;
+}
+.horVar{
+    width: 95%;
+    height: 3px;
+    background-color: var(--bc-gray);
+    margin-left: 20px;
+}
+
+
+.detailButtons{
+    height: 50px;
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    justify-content: center;
+}
+
+.detail_RC_Title{
+    font-size: 35px;
+}
+.detail_subtitle{
+    font-size: 20px;
+    padding-bottom: 3px;
+}
+.detailButton{
+    height:30px;
+    padding-block: 8px;
+    padding-inline: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: center;
+    line-height: 1;
+}
+.deleteButton{
+    background-color: var(--bc-red);
+    color: white;
+}
+.listButton{
+    background-color: var(--bc-gray);
+}
+.editButton{
+    background-color: var(--bc-blue);
+    color: white;
+}
+
+.IdeaCreateForm{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
