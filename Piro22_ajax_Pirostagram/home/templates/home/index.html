@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/reset.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/layout.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/header.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/userInfo.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/highlights.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/posts.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/scrollBar.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class="header__goBackButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-file-person" viewBox="0 0 16 16">
+            <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>
+        </button>
+        <div class="header__username">Pirogramming</div>
+        <div class="header__rightButtons">
+          <button class="header__alarmButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-file-earmark-post-fill" viewBox="0 0 16 16">
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-5-.5H7a.5.5 0 0 1 0 1H4.5a.5.5 0 0 1 0-1m0 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5"/>
+            </svg>
+          </button>
+          <button class="header__moreButton">
+            <img src="{% static 'assets/icons/more.svg'%}" alt="더보기 열기 버튼" />
+          </button>
+        </div>
+      </header>
+      <main>
+        
+        {% comment %} <section class="profile">
+          <div class="profile__image">
+            <img src="{% static 'assets/images/profilePicture.png'%}" alt="프로필 사진" />
+          </div>
+          <div class="profile__data">
+            <!-- .profile__data-item*3>.profile__data-number+.profile__data-type -->
+            <div class="profile__data-item">
+              <div class="profile__data-number">1,234</div>
+              <div class="profile__data-type">Posts</div>
+            </div>
+            <div class="profile__data-item">
+              <div class="profile__data-number">5,678</div>
+              <div class="profile__data-type">Followers</div>
+            </div>
+            <div class="profile__data-item">
+              <div class="profile__data-number">9,101</div>
+              <div class="profile__data-type">Following</div>
+            </div>
+          </div>
+        </section>
+        <section class="userInfo">
+          <div>
+            <div class="userInfo__username">Pirogramming</div>
+            <div class="userInfo__category">컴퓨터 회사</div>
+            <div class="userInfo__description">
+              프로그래밍의 첫 걸음, 피로그래밍
+            </div>
+          </div>
+          <button class="userInfo__follow">Follow</button>
+        </section> {% endcomment %}
+
+        <aside class="highlights">
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src="{% static 'assets/images/profilePicture.png'%}"
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src="{% static 'assets/images/profilePicture.png'%}"
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src={% static 'assets/images/profilePicture.png' %}
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src={% static 'assets/images/profilePicture.png' %}
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src={% static 'assets/images/profilePicture.png' %}
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+          <div class="highlights__item">
+            <button class="highlights__item-image">
+              <img
+                src={% static 'assets/images/profilePicture.png' %}
+                alt="하이라이트 보기"
+              />
+            </button>
+            <div class="highlights_item-title">Title</div>
+          </div>
+        </aside>
+        <section class="posts">{% comment %} 
+          <nav class="posts__tabBar">
+            <div class="posts__tab posts__tab--selected">1</div>
+            <div class="posts__tab">2</div>
+            <div class="posts__tab">3</div>
+          </nav> {% endcomment %}
+          <article class="posts__contents">
+            {% for post in posts %}
+            <div class="posts__post post_id-{{post.id}}">
+              <div class="posts__post-header">
+                <div class="posts__post-username">{{post.user.username}}</div>
+                <div class="posts__post-date">{{post.created_at}}</div>
+              </div>
+              <div class="posts__photo">
+                <img src="{% static 'assets/images/post.jpg'%}" alt="포스트 사진1">
+              </div>
+              <div class="posts__post-footer">
+                <div class = "post-info">
+                  <span class = "username">{{post.user.username}}</span>
+                  <span class = "post_title">{{post.title}}</span>
+                </div>
+              </div>
+              <div class="posts__post-footer">
+                <button class="posts__post-like" onclick="
+                  onClickLike({{post.id}})
+                ">
+                  <img src="{% static 'assets/icons/like.svg'%}" alt="좋아요 버튼" />
+                </button>
+                <span class = "like_count">{{post.likes}} likes</span>
+              </div>
+              <div class="posts__post-footer-comment">
+                <div class = "comment-input">
+                  <div class = "comment-input-username-container">
+                    <span class = "comment-input-username">admin</span>
+                  </div>
+                  <div class = "comment-input-content-container">
+                    <input class = "comment-input-content" placeholder="댓글을 입력하세요"></input>
+                  </div>
+                  <button onclick="onClickComment({{post.id}})" class = "comment-input-button">등록</button>
+                </div>
+                <div class="comments">
+                  {% for comment in post.comments.all %}
+                  <div class = "comment comment-{{comment.id}}">
+                    <span class = "username">{{comment.creator.username}}</span>
+                    <span class = "comment-content">{{comment.content}}</span>
+                    <button class = "comment-delete-button" onclick="onClickDeleteComment({{comment.id}})">삭제</button>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div> 
+            </div>
+            {% endfor %}
+          </article>
+        </section>
+      </main>
+      <footer>
+        <!-- TODO -->
+      </footer>
+    </div>
+  <script>
+  const requestLike = new XMLHttpRequest();
+
+  const onClickLike = (post_id) =>{
+    const url = "{% url 'home:like' %}"
+    requestLike.open("POST", url, true);
+
+    requestLike.setRequestHeader("Content-Type", "application/json");
+    requestLike.send(JSON.stringify({
+      post_id: post_id
+    }));
+  }
+
+  requestLike.onreadystatechange = () =>{
+    if(requestLike.readyState === XMLHttpRequest.DONE){
+      if(requestLike.status < 400){
+        const post_id = JSON.parse(requestLike.responseText).id;
+        const element = document.querySelector(`.post_id-${post_id} .like_count`);
+        const originHTML = element.innerHTML;
+        const [like_count, likes] = originHTML.split(" ");
+        element.innerHTML = `${JSON.parse(requestLike.responseText).likes} likes`;
+      }
+    }
+  }
+
+  {% comment %} comment register {% endcomment %}
+  const requestComment = new XMLHttpRequest();
+
+  const onClickComment = (post_id) =>{
+    const url = "/comment_register/";
+
+    requestComment.open("POST", url, true);
+
+    const comment = document.querySelector(`.post_id-${post_id} .comment-input-content`).value;
+
+    requestComment.setRequestHeader("Content-Type", "application/json");
+
+    requestComment.send(JSON.stringify({
+      post_id: post_id,
+      comment_content: comment
+    }));
+
+    document.querySelector(`.post_id-${post_id} .comment-input-content`).value = "";
+  }
+
+  requestComment.onreadystatechange = () =>{
+    if(requestComment.readyState === XMLHttpRequest.DONE){
+      if(requestComment.status < 400){
+        const post_id = JSON.parse(requestComment.responseText).post_id;
+        const comment = JSON.parse(requestComment.responseText).comment;
+        const element = document.querySelector(`.post_id-${post_id} .comments`);
+        element.innerHTML += `
+          <div class = "comment comment-${comment.id}">
+            <span class = "username">${comment.creator.username}</span>
+            <span class = "comment-content">${comment.content}</span>
+            <button class = "comment-delete-button" onclick="onClickDeleteComment(${comment.id})">삭제</button>
+          </div>
+        `;
+      }
+    }
+  }
+{% comment %} comment delete {% endcomment %}
+  const requestDeleteComment = new XMLHttpRequest();
+
+  const onClickDeleteComment = (comment_id) =>{
+    const url = "/comment_delete/";
+
+    requestDeleteComment.open("POST", url, true);
+
+    requestDeleteComment.setRequestHeader("Content-Type", "application/json");
+
+    requestDeleteComment.send(JSON.stringify({
+      comment_id: comment_id
+    }));
+  }
+
+  requestDeleteComment.onreadystatechange = () =>{
+    if(requestDeleteComment.readyState === XMLHttpRequest.DONE){
+      if(requestDeleteComment.status < 400){
+        const comment_id = JSON.parse(requestDeleteComment.responseText).comment_id;
+        const element = document.querySelector(`.comment-${comment_id}`);
+        element.remove();
+      }
+    }
+  }
+
+  </script>
+  </body>
+</html>
+
